@@ -2,11 +2,15 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <title>Perpustakaan</title>
     <link rel="stylesheet" href="asset/style.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- icon title -->
+    <link rel="icon" type="image/png" href="../asset/images/icons/library.png"/>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="sidebar close">
@@ -27,7 +31,7 @@
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-collection' ></i>
+          <i class='bx bx-cabinet' ></i>
             <span class="link_name">Data</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
@@ -42,7 +46,7 @@
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-book-alt' ></i>
+          <i class='bx bx-bookmark-plus'></i>
             <span class="link_name">Transaksi</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
@@ -56,7 +60,7 @@
       <li>
         <div class="iocn-link">
           <a href="#">
-            <i class='bx bx-plug' ></i>
+          <i class='bx bx-line-chart-down'></i>
             <span class="link_name">Laporan</span>
           </a>
           <i class='bx bxs-chevron-down arrow' ></i>
@@ -79,13 +83,13 @@
       <li>
     <div class="profile-details">
       <div class="profile-content">
-        <!--<img src="image/profile.jpg" alt="profileImg">-->
+        <!-- <img src="../asset/images/profile.png" alt="profileImg"> -->
       </div>
       <div class="name-job">
         <div class="profile_name">Ari Gunawan</div>
         <div class="job">Admin Perpus</div>
       </div>
-      <i class='bx bx-log-out' ></i>
+      <i class='bx bx-log-out'></i>
     </div>
   </li>
 </ul>
@@ -97,6 +101,9 @@
     </div>
   </section>
 
+  
   <script src="asset/script.js"></script>
+  <!-- Script bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>
