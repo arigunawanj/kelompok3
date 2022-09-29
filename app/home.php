@@ -15,6 +15,7 @@ if(!$_SESSION['nip']){
     <meta charset="UTF-8">
     <title>Perpustakaan</title>
     <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="asset/404.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- icon title -->
