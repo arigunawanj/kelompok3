@@ -20,15 +20,6 @@
     </div>
     <ul class="nav-links">
       <li>
-        <a href="#">
-          <i class='bx bx-grid-alt' ></i>
-          <span class="link_name">Beranda</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Beranda</a></li>
-        </ul>
-      </li>
-      <li>
         <div class="iocn-link">
           <a href="#">
           <i class='bx bx-cabinet' ></i>
@@ -103,30 +94,8 @@
     <div class="container text-center">
         <div class="row justify-content-start">
             <div class="col">
-            <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                </tr>
-                <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                </tr>
-            </tbody>
-            </table>
+              <h1>SELAMAT DATANG, <span style="color:red;">ADMIN</span></h1>
+              <h5>Silahkan memilih menu yang ada disebelah <span style="color:blue;">kiri</span></h5>
             </div>
         </div>
     </div>

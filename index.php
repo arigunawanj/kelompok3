@@ -32,7 +32,7 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Perpustakaan Member
+						Admin Perpustakaan
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
@@ -68,7 +68,7 @@
 
 					<div class="text-center p-t-136">
 						<a class="txt2" href="index2.php">
-							Buat Akun Baru
+							Bukan Admin ? Login disini
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>

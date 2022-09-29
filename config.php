@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost","root","123","library");
+$db = mysqli_connect("localhost","root","","library");
 
 function read($table)
 {

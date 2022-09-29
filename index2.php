@@ -33,51 +33,31 @@
 
 				<form class="login100-form validate-form">
 					<span class="login100-form-title">
-						Daftar Member
+						Login Siswa
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
-						<input class="input100" type="text" placeholder="Username" name="username">
+						<input class="input100" type="text" placeholder="NIS" name="username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Password diisi dulu">
-						<input class="input100" type="password" name="password" id="password" placeholder="Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
-						</span>
-					</div>
-
-                    <div class="wrap-input100 validate-input" data-validate = "Password Konfirmasi diisi dulu">
-						<input class="input100" type="password" name="password_confirmation" id= "passwordc" placeholder="Konfirmasi Password">
-						<span class="focus-input100"></span>
-						<span class="symbol-input100">
-							<i class="fa fa-check" aria-hidden="true"></i>
-						</span>
-					</div>
 					
-					<div class="mb-0 form-check">
-                    <label class="custom-control overflow-checkbox">
-						<input type="checkbox" class="overflow-control-input" id="showPassword">
-						<span class="overflow-control-indicator"></span>
-						<span class="overflow-control-description">Lihat Kata Sandi</span>
-					</label>
+					
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Daftar
+							Login
 						</button>
 					</div>
 
 				
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="index.html">
-							Sudah Punya Akun ? Login
+						<a class="txt2" href="index.php">
+							Bukan Siswa ? Login disini
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>
