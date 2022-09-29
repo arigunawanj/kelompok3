@@ -62,7 +62,7 @@
 					
 					<div class="mb-0 form-check">
                     <label class="custom-control overflow-checkbox">
-						<input type="checkbox" class="overflow-control-input" checked="" id="showPassword">
+						<input type="checkbox" class="overflow-control-input" id="showPassword">
 						<span class="overflow-control-indicator"></span>
 						<span class="overflow-control-description">Lihat Kata Sandi</span>
 					</label>
