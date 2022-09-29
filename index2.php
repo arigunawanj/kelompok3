@@ -1,3 +1,36 @@
+<?php include ('config.php'); 
+session_start();
+
+if(isset($_SESSION['nis'])){
+	header('Location:app/home_siswa.php');
+  }
+  
+  if (isset($_POST['login2'])){
+	  $nis = $_POST['nis'];
+	  
+	  
+	  // var_dump($password);
+	  $query = mysqli_query($koneksi, "SELECT * FROM student WHERE nis='$nis'");
+	  $data = mysqli_fetch_assoc($query);
+  
+	  if($data){
+		$_SESSION['nis'] = $nis;
+		$_SESSION['nama'] = $data['nama'];
+		$_SESSION['alamat'] = $data['alamat'];
+		  echo $data['nis'];
+		  header('Location:app/home_siswa.php');
+		}else if($username == ''){
+		  header('Location:index2.php?error=2');
+	  } 
+	  else {
+		  header('Location:index2.php?error=1');
+	  }
+  }
+  
+  
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,13 +64,13 @@
 					<img src="asset/images/register.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
 						Login Siswa
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
-						<input class="input100" type="text" placeholder="NIS" name="username">
+						<input class="input100" type="text" placeholder="NIS" name="nis">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -48,7 +81,7 @@
 					
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name="login2">
 							Login
 						</button>
 					</div>
@@ -78,6 +111,8 @@
 	<script src="asset/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="asset/vendor/tilt/tilt.jquery.min.js"></script>
+	<!-- SCRIPT SWEETALERT -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 	<script >
 		$('.js-tilt').tilt({
 			scale: 1.1

@@ -3,8 +3,8 @@
 include('../config.php'); 
 
 session_start();
-if(!$_SESSION['nip']){
-    header('Location:../index.php?session=expired');
+if(!$_SESSION['nis']){
+    header('Location:../index2.php?session=expired');
 }
 
 
@@ -24,10 +24,10 @@ if(!$_SESSION['nip']){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
-  <?php include('sidebar/sidebar_admin.php') ?>
+    <!-- SIDEBAR -->
+    <?php include('sidebar/sidebar_siswa.php') ?>
   
-
-  <!-- ISI KONTEN -->
+    <!-- ISI KONTEN -->
   <section class="home-section">
     <div class="home-content">
       <i class='bx bx-menu'></i>
@@ -36,7 +36,7 @@ if(!$_SESSION['nip']){
     <div class="container text-center">
         <div class="row justify-content-start">
             <div class="col">
-              <h1>SELAMAT DATANG, <span style="color:red;"><?= $_SESSION['name']?></span></h1>
+              <h1>SELAMAT DATANG, <span style="color:red;"><?= $_SESSION['nama']?></span></h1>
               <h5>Silahkan memilih menu yang ada disebelah <span style="color:blue;">kiri</span></h5>
             </div>
         </div>

@@ -1,3 +1,36 @@
+<?php include ('config.php'); 
+session_start();
+
+if(isset($_SESSION['nip'])){
+	header('Location:app/home.php');
+  }
+  
+  if (isset($_POST['login'])){
+	  $nip = $_POST['nip'];
+	  $password = $_POST['password'];
+	  
+	  
+	  // var_dump($password);
+	  $query = mysqli_query($koneksi, "SELECT * FROM officer WHERE nip='$nip' AND password='$password'");
+	  $data = mysqli_fetch_assoc($query);
+  
+	  if($data){
+		$_SESSION['nip'] = $nip;
+		$_SESSION['name'] = $data['name'];
+		$_SESSION['addres'] = $data['addres'];
+		  echo $data['nip'];
+		  header('Location:app/home.php');
+		}else if($nip == '' || $password ==''){
+		  header('Location:index.php?error=2');
+	  } 
+	  else {
+		  header('Location:index.php?error=1');
+	  }
+  }
+  
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,13 +63,13 @@
 					<img src="asset/images/library.png" alt="IMG">
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="POST">
 					<span class="login100-form-title">
 						Admin Perpustakaan
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
-						<input class="input100" type="text" placeholder="Username" name="username">
+					<div class="wrap-input100 validate-input" data-validate = "Isi dulu nip">
+						<input class="input100" type="text" placeholder="nip" name="nip">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
@@ -100,4 +133,38 @@
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
 </body>
+<?php
+if(isset ($_GET['error'])){
+  $x = ($_GET['error']);
+  if($x==1){
+    echo "
+    <script>var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'error',
+      title: 'Passwordmu Salah'
+    })</script>";
+  } 
+  else if($x==2){
+    echo "
+    <script>var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    Toast.fire({
+      icon: 'warning',
+      title: 'Silahkan diisi Username dan Passwordnya dulu'
+    })</script>";
+  }
+  else {
+    echo '';
+  }
+}
+?>
 </html>
