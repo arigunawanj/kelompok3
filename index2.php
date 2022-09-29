@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="asset/css/util.css">
 	<link rel="stylesheet" type="text/css" href="asset/css/main.css">
 <!--===============================================================================================-->
+	<link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
 	
@@ -35,29 +36,37 @@
 						Daftar Member
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Masukkan Username">
-						<input class="input100" type="text" name="email" placeholder="Username">
+					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
+						<input class="input100" type="text" placeholder="Username" name="username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Masukkan Password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+					<div class="wrap-input100 validate-input" data-validate = "Password diisi dulu">
+						<input class="input100" type="password" name="password" id="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
 					</div>
-                    <div class="wrap-input100 validate-input" data-validate = "Masukkan Password">
-						<input class="input100" type="password" name="pass" placeholder="Konfirmasi Password">
+
+                    <div class="wrap-input100 validate-input" data-validate = "Password Konfirmasi diisi dulu">
+						<input class="input100" type="password" name="password_confirmation" id= "passwordc" placeholder="Konfirmasi Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
-							<i class="fa fa-lock" aria-hidden="true"></i>
+							<i class="fa fa-check" aria-hidden="true"></i>
 						</span>
 					</div>
 					
+					<div class="mb-0 form-check">
+                    <label class="custom-control overflow-checkbox">
+						<input type="checkbox" class="overflow-control-input" checked="" id="showPassword">
+						<span class="overflow-control-indicator"></span>
+						<span class="overflow-control-description">Lihat Kata Sandi</span>
+					</label>
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							Daftar
@@ -96,6 +105,16 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="asset/js/main.js"></script>
-
+	<script>
+	document.getElementById('showPassword').onclick = function() {
+    if ( this.checked ) {
+       document.getElementById('password').type = "text";
+       document.getElementById('passwordc').type = "text";
+    } else {
+       document.getElementById('password').type = "password";
+       document.getElementById('passwordc').type = "password";
+    }
+};
+</script>
 </body>
 </html>

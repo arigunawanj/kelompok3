@@ -35,16 +35,16 @@
 						Perpustakaan Member
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Masukkan Username">
-						<input class="input100" type="text" name="email" placeholder="Username">
+					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
+						<input class="input100" type="text" placeholder="Username" name="username">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-user" aria-hidden="true"></i>
 						</span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate = "Masukkan Password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+					<div class="wrap-input100 validate-input" data-validate = "Password diisi dulu">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -52,7 +52,7 @@
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" name="login">
 							Login
 						</button>
 					</div>
@@ -67,7 +67,7 @@
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="index2.html">
+						<a class="txt2" href="index2.php">
 							Buat Akun Baru
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
@@ -96,6 +96,8 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="asset/js/main.js"></script>
+	<!-- SCRIPT SWEETALERT -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
 </body>
 </html>
