@@ -15,6 +15,7 @@ if(!$_SESSION['nis']){
     <meta charset="UTF-8">
     <title>Perpustakaan</title>
     <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="asset/404.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- icon title -->
@@ -36,8 +37,22 @@ if(!$_SESSION['nis']){
     <div class="container text-center">
         <div class="row justify-content-start">
             <div class="col">
-              <h1>SELAMAT DATANG, <span style="color:red;"><?= $_SESSION['nama']?></span></h1>
-              <h5>Silahkan memilih menu yang ada disebelah <span style="color:blue;">kiri</span></h5>
+            <?php 
+            if (isset($_GET['page'])){
+                if ($_GET['page']=='buku-siswa'){
+                    include('ksiswa/buku_siswa.php'); 
+                }
+                else if ($_GET['page']=='pengembalian-siswa'){
+                    include('ksiswa/pengembalian_siswa.php');
+                }
+                else if ($_GET['page']=='peminjaman-siswa'){
+                include('ksiswa/peminjaman_siswa.php');
+                }  
+                else {
+                    include('404.php');
+                }
+            }
+        ?>
             </div>
         </div>
     </div>

@@ -3,8 +3,8 @@
         <i class='bx bx-library'></i>
         <span class="logo_name">Perpustakaan</span>
     </div>
-        <!-- MENU DATA -->
         <ul class="nav-links">
+          <!-- MENU DATA -->
           <li>
             <div class="iocn-link">
               <a href="#">
@@ -16,8 +16,9 @@
 
             <ul class="sub-menu">
               <li><a class="link_name" href="#">Data</a></li>
-              <li><a href="#">Data Siswa</a></li>
-              <li><a href="#">Data Buku</a></li>
+              <li><a href="home.php?page=data-siswa">Data Siswa</a></li>
+              <li><a href="home.php?page=data-buku">Data Buku</a></li>
+              <li><a href="home.php?page=data-petugas">Data Petugas</a></li>
             </ul>
             </li>
           
@@ -33,8 +34,8 @@
 
               <ul class="sub-menu">
                   <li><a class="link_name" href="#">Transaksi</a></li>
-                  <li><a href="#">Data Pengembalian</a></li>
-                  <li><a href="#">Data Peminjaman</a></li>
+                  <li><a href="home.php?page=data-pengembalian">Data Pengembalian</a></li>
+                  <li><a href="home.php?page=data-peminjaman">Data Peminjaman</a></li>
               </ul>
           </li>
 
@@ -49,8 +50,8 @@
             </div>
               <ul class="sub-menu">
                 <li><a class="link_name" href="#">Laporan</a></li>
-                <li><a href="#">Laporan Pengembalian</a></li>
-                <li><a href="#">Laporan Peminjaman</a></li>
+                <li><a href="home.php?page=lap-pengembalian">Laporan Pengembalian</a></li>
+                <li><a href="home.php?page=lap-peminjaman">Laporan Peminjaman</a></li>
               </ul>
             </li>
           

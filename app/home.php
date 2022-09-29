@@ -36,8 +36,34 @@ if(!$_SESSION['nip']){
     <div class="container text-center">
         <div class="row justify-content-start">
             <div class="col">
-              <h1>SELAMAT DATANG, <span style="color:red;"><?= $_SESSION['name']?></span></h1>
-              <h5>Silahkan memilih menu yang ada disebelah <span style="color:blue;">kiri</span></h5>
+            <?php 
+            if (isset($_GET['page'])){
+                if ($_GET['page']=='data-siswa'){
+                    include('kadmin/data_siswa.php'); 
+                }
+                else if ($_GET['page']=='data-buku'){
+                    include('kadmin/data_buku.php');
+                }
+                else if ($_GET['page']=='data-petugas'){
+                include('kadmin/data_petugas.php');
+                }  
+                else if ($_GET['page']=='data-pengembalian'){
+                include('kadmin/data_pengembalian.php');
+                }  
+                else if ($_GET['page']=='data-peminjaman'){
+                include('kadmin/data_peminjaman.php');
+                }  
+                else if ($_GET['page']=='lap-peminjaman'){
+                include('kadmin/lap_peminjaman.php');
+                }  
+                else if ($_GET['page']=='lap-pengembalian'){
+                include('kadmin/lap_pengembalian.php');
+                }  
+                else {
+                    include('404.php');
+                }
+            }
+        ?>
             </div>
         </div>
     </div>
