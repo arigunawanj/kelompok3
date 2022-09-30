@@ -69,7 +69,7 @@ if(isset($_SESSION['nis'])){
 						Login Siswa
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Isi dulu usernamenya">
+					<div class="wrap-input100 validate-input" data-validate = "Isi dulu NISnya">
 						<input class="input100" type="text" placeholder="NIS" name="nis">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
