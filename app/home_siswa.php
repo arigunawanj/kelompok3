@@ -33,10 +33,6 @@ if(!$_SESSION['nis']){
     <div class="home-content">
       <i class='bx bx-menu'></i>
     </div>
-    
-    <div class="container text-center">
-        <div class="row justify-content-start">
-            <div class="col">
             <?php 
             if (isset($_GET['page'])){
                 if ($_GET['page']=='buku-siswa'){
