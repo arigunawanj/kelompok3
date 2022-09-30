@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Sep 29, 2022 at 06:49 AM
--- Server version: 5.7.33
--- PHP Version: 8.1.10
+-- Host: 127.0.0.1
+-- Generation Time: Sep 30, 2022 at 04:28 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -94,8 +94,17 @@ CREATE TABLE `officer` (
   `nip` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `gander` enum('L','P') DEFAULT NULL,
-  `addres` int(11) DEFAULT NULL
+  `addres` varchar(255) DEFAULT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `officer`
+--
+
+INSERT INTO `officer` (`nip`, `name`, `gander`, `addres`, `password`) VALUES
+(1, 'arigunawanj', 'L', 'haha', 'haha'),
+(123456, 'Ari Gunawan', 'L', 'wkwkw', 'admin');
 
 -- --------------------------------------------------------
 
@@ -235,7 +244,7 @@ ALTER TABLE `loan_detail`
 -- AUTO_INCREMENT for table `officer`
 --
 ALTER TABLE `officer`
-  MODIFY `nip` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `nip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123457;
 
 --
 -- AUTO_INCREMENT for table `retrun`
