@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['nis'])){
-	header('Location:app/home_siswa.php');
+	header('Location:app/home_siswa.php?page=utama');
   }
   
   if (isset($_POST['login2'])){
@@ -18,7 +18,7 @@ if(isset($_SESSION['nis'])){
 		$_SESSION['nama'] = $data['nama'];
 		$_SESSION['alamat'] = $data['alamat'];
 		  echo $data['nis'];
-		  header('Location:app/home_siswa.php');
+		  header('Location:app/home_siswa.php?page=utama');
 		}else if($username == ''){
 		  header('Location:index2.php?error=2');
 	  } 

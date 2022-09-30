@@ -39,21 +39,7 @@
               </ul>
           </li>
 
-          <!-- MENU LAPORAN -->
-          <li>
-            <div class="iocn-link">
-              <a href="#">
-                <i class='bx bx-line-chart-down'></i>
-                <span class="link_name">Laporan</span>
-              </a>
-                <i class='bx bxs-chevron-down arrow' ></i>
-            </div>
-              <ul class="sub-menu">
-                <li><a class="link_name" href="#">Laporan</a></li>
-                <li><a href="home.php?page=lap-pengembalian">Laporan Pengembalian</a></li>
-                <li><a href="home.php?page=lap-peminjaman">Laporan Peminjaman</a></li>
-              </ul>
-            </li>
+        
           
           <!-- ISI PROFILE -->
           <li>

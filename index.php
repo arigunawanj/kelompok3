@@ -2,7 +2,7 @@
 session_start();
 
 if(isset($_SESSION['nip'])){
-	header('Location:app/home.php');
+	header('Location:app/home.php?page=dashboard');
   }
   
   if (isset($_POST['login'])){
@@ -19,7 +19,7 @@ if(isset($_SESSION['nip'])){
 		$_SESSION['name'] = $data['name'];
 		$_SESSION['addres'] = $data['addres'];
 		  echo $data['nip'];
-		  header('Location:app/home.php');
+		  header('Location:app/home.php?page=dashboard');
 		}else if($nip == '' || $password ==''){
 		  header('Location:index.php?error=2');
 	  } 

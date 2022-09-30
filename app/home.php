@@ -49,13 +49,10 @@ if(!$_SESSION['nip']){
                 }  
                 else if ($_GET['page']=='data-peminjaman'){
                 include('kadmin/data_peminjaman.php');
-                }  
-                else if ($_GET['page']=='lap-peminjaman'){
-                include('kadmin/lap_peminjaman.php');
-                }  
-                else if ($_GET['page']=='lap-pengembalian'){
-                include('kadmin/lap_pengembalian.php');
-                }  
+                }    
+                else if ($_GET['page']=='dashboard'){
+                include('kadmin/dashboard.php');
+                }    
                 else {
                     include('404.php');
                 }

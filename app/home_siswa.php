@@ -44,6 +44,9 @@ if(!$_SESSION['nis']){
                 else if ($_GET['page']=='peminjaman-siswa'){
                 include('ksiswa/peminjaman_siswa.php');
                 }  
+                else if ($_GET['page']=='utama'){
+                include('ksiswa/utama.php');
+                }  
                 else {
                     include('404.php');
                 }
