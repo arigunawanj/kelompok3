@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2022 at 04:28 AM
+-- Generation Time: Oct 03, 2022 at 04:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,6 +39,14 @@ CREATE TABLE `book` (
   `stock` int(8) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`id_book`, `author`, `year`, `title`, `city`, `publiser`, `cover`, `sinopsis`, `stock`) VALUES
+(1, 'Jhon', 2011, 'Coding is Funs', 'Malang', 'Gramedia', 'cover1.png', 'lorem lorem lorem', 49),
+(2, 'Merry', 2011, 'Life like larry', 'Malang', 'Gramedia', 'cover1.png', 'lorem lorem lorem', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -46,7 +54,7 @@ CREATE TABLE `book` (
 --
 
 CREATE TABLE `class` (
-  `id` int(11) NOT NULL,
+  `id_kelas` int(11) NOT NULL,
   `nama_kelas` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -54,8 +62,8 @@ CREATE TABLE `class` (
 -- Dumping data for table `class`
 --
 
-INSERT INTO `class` (`id`, `nama_kelas`) VALUES
-(1, '10 MM');
+INSERT INTO `class` (`id_kelas`, `nama_kelas`) VALUES
+(2, '10 MM');
 
 -- --------------------------------------------------------
 
@@ -71,6 +79,18 @@ CREATE TABLE `loan` (
   `date_retrun` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `loan`
+--
+
+INSERT INTO `loan` (`id_loan`, `id_student`, `id_officer`, `date_loan`, `date_retrun`) VALUES
+(498, 11, 55, '2022-10-03', '2022-10-04'),
+(755, 12, 55, '2022-10-03', '2022-10-04'),
+(792, 11, 55, '2022-10-03', '2022-10-04'),
+(823, 11, 55, '2022-09-29', '2022-10-04'),
+(903, 12, 55, '2022-10-03', '2022-10-04'),
+(992, 11, 55, '2022-09-25', '2022-10-02');
+
 -- --------------------------------------------------------
 
 --
@@ -80,9 +100,15 @@ CREATE TABLE `loan` (
 CREATE TABLE `loan_detail` (
   `id_detail_loan` int(11) NOT NULL,
   `id_book` int(11) NOT NULL,
-  `id_loan` int(11) NOT NULL,
-  `kuantitas` int(10) NOT NULL
+  `id_loan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loan_detail`
+--
+
+INSERT INTO `loan_detail` (`id_detail_loan`, `id_book`, `id_loan`) VALUES
+(74, 1, 823);
 
 -- --------------------------------------------------------
 
@@ -94,8 +120,8 @@ CREATE TABLE `officer` (
   `nip` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
   `gander` enum('L','P') DEFAULT NULL,
-  `addres` varchar(255) DEFAULT NULL,
-  `password` varchar(50) NOT NULL
+  `addres` varchar(11) DEFAULT NULL,
+  `password` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -103,8 +129,7 @@ CREATE TABLE `officer` (
 --
 
 INSERT INTO `officer` (`nip`, `name`, `gander`, `addres`, `password`) VALUES
-(1, 'arigunawanj', 'L', 'haha', 'haha'),
-(123456, 'Ari Gunawan', 'L', 'wkwkw', 'admin');
+(55, 'Jhon', 'L', 'Malang', '123');
 
 -- --------------------------------------------------------
 
@@ -114,10 +139,29 @@ INSERT INTO `officer` (`nip`, `name`, `gander`, `addres`, `password`) VALUES
 
 CREATE TABLE `retrun` (
   `id_retrun` int(11) NOT NULL,
-  `id_loan` int(11) DEFAULT NULL,
-  `date_loan` int(11) DEFAULT NULL,
+  `id_loan` int(11) NOT NULL,
+  `date_loan` date DEFAULT NULL,
   `fine` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `retrun`
+--
+
+INSERT INTO `retrun` (`id_retrun`, `id_loan`, `date_loan`, `fine`) VALUES
+(28, 755, '2022-10-03', 0),
+(29, 755, '2022-10-03', 0),
+(30, 792, '2022-10-03', 0),
+(31, 498, '2022-10-03', 0),
+(32, 992, '2022-10-03', 1000),
+(33, 992, '2022-10-03', 1000),
+(34, 992, '2022-10-03', 1000),
+(35, 992, '2022-10-03', 1000),
+(36, 992, '2022-10-03', 1000),
+(37, 992, '2022-10-03', 1000),
+(38, 992, '2022-10-03', 1000),
+(39, 992, '2022-10-03', 1000),
+(40, 903, '2022-10-03', 0);
 
 -- --------------------------------------------------------
 
@@ -143,7 +187,7 @@ CREATE TABLE `student` (
   `nama` varchar(50) DEFAULT NULL,
   `jenis_kelamin` enum('L','P') NOT NULL,
   `alamat` varchar(50) NOT NULL,
-  `id_kelas` int(2) DEFAULT NULL
+  `id_kelas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -151,7 +195,23 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`nis`, `nama`, `jenis_kelamin`, `alamat`, `id_kelas`) VALUES
-(1997877, 'Rifqi', 'L', 'Malang', 1);
+(11, 'Patrick', 'L', 'Malang', 2),
+(12, 'Rifqi', 'L', 'Malang', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temporari`
+--
+
+CREATE TABLE `temporari` (
+  `id_tmp` int(11) NOT NULL,
+  `id_book` int(11) NOT NULL,
+  `cover` varchar(50) NOT NULL,
+  `author` varchar(50) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `publiser` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -167,23 +227,20 @@ ALTER TABLE `book`
 -- Indexes for table `class`
 --
 ALTER TABLE `class`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_kelas`);
 
 --
 -- Indexes for table `loan`
 --
 ALTER TABLE `loan`
-  ADD PRIMARY KEY (`id_loan`),
-  ADD UNIQUE KEY `id_student` (`id_student`,`id_officer`),
-  ADD KEY `id_officer` (`id_officer`);
+  ADD PRIMARY KEY (`id_loan`);
 
 --
 -- Indexes for table `loan_detail`
 --
 ALTER TABLE `loan_detail`
   ADD PRIMARY KEY (`id_detail_loan`),
-  ADD UNIQUE KEY `id_book` (`id_book`,`id_loan`),
-  ADD KEY `id_loan` (`id_loan`);
+  ADD KEY `id_book` (`id_book`,`id_loan`);
 
 --
 -- Indexes for table `officer`
@@ -196,7 +253,7 @@ ALTER TABLE `officer`
 --
 ALTER TABLE `retrun`
   ADD PRIMARY KEY (`id_retrun`),
-  ADD UNIQUE KEY `id_loan` (`id_loan`);
+  ADD KEY `id_loan` (`id_loan`);
 
 --
 -- Indexes for table `retrun_detail`
@@ -210,7 +267,13 @@ ALTER TABLE `retrun_detail`
 --
 ALTER TABLE `student`
   ADD PRIMARY KEY (`nis`),
-  ADD UNIQUE KEY `id_kelas` (`id_kelas`);
+  ADD KEY `id_kelas` (`id_kelas`);
+
+--
+-- Indexes for table `temporari`
+--
+ALTER TABLE `temporari`
+  ADD PRIMARY KEY (`id_tmp`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -220,37 +283,37 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_book` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `loan`
 --
 ALTER TABLE `loan`
-  MODIFY `id_loan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_loan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=993;
 
 --
 -- AUTO_INCREMENT for table `loan_detail`
 --
 ALTER TABLE `loan_detail`
-  MODIFY `id_detail_loan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_detail_loan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `officer`
 --
 ALTER TABLE `officer`
-  MODIFY `nip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123457;
+  MODIFY `nip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `retrun`
 --
 ALTER TABLE `retrun`
-  MODIFY `id_retrun` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_retrun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `retrun_detail`
@@ -259,28 +322,14 @@ ALTER TABLE `retrun_detail`
   MODIFY `id_retrunDetail` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `temporari`
+--
+ALTER TABLE `temporari`
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `loan`
---
-ALTER TABLE `loan`
-  ADD CONSTRAINT `loan_ibfk_1` FOREIGN KEY (`id_student`) REFERENCES `student` (`nis`),
-  ADD CONSTRAINT `loan_ibfk_2` FOREIGN KEY (`id_officer`) REFERENCES `officer` (`nip`);
-
---
--- Constraints for table `loan_detail`
---
-ALTER TABLE `loan_detail`
-  ADD CONSTRAINT `loan_detail_ibfk_1` FOREIGN KEY (`id_book`) REFERENCES `book` (`id_book`),
-  ADD CONSTRAINT `loan_detail_ibfk_2` FOREIGN KEY (`id_loan`) REFERENCES `loan` (`id_loan`);
-
---
--- Constraints for table `retrun`
---
-ALTER TABLE `retrun`
-  ADD CONSTRAINT `retrun_ibfk_1` FOREIGN KEY (`id_loan`) REFERENCES `loan` (`id_loan`);
 
 --
 -- Constraints for table `retrun_detail`
@@ -292,7 +341,7 @@ ALTER TABLE `retrun_detail`
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
-  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `class` (`id`);
+  ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`id_kelas`) REFERENCES `class` (`id_kelas`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
