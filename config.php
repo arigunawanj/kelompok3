@@ -162,10 +162,12 @@ function insert_loan($data)
     $id_book = $data['book'];
     $tgl_P = $data['loan_date'];
     $tgl_K = $data['retrun_date'];
+    $officer = $data['officer'];
+    
     //insert tabel peminjaman
     if ($nis != null && $id_book != null) {
 
-        $query  = "INSERT INTO loan (id_loan, id_student, id_officer, date_loan, date_retrun) VALUES ('$randomNumber','$nis','55','$tgl_P','$tgl_K')";
+        $query  = "INSERT INTO loan (id_loan, id_student, id_officer, date_loan, date_retrun) VALUES ('$randomNumber','$nis','$officer','$tgl_P','$tgl_K')";
         $sql    = mysqli_query($db, $query);
         $jml = count($id_book);
         for ($i = 0; $i < $jml; $i++) {
@@ -178,7 +180,7 @@ function insert_loan($data)
         $query3 = "DELETE FROM temporari";
         $sql    = mysqli_query($db, $query3);
         $sukses = "Save data Sucessfuly";
-        header('Location: retrun.php');
+        header('Location: home.php?page=data-pengembalian');
         return $sql;
 
         

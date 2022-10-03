@@ -20,7 +20,32 @@
 <div class="container text-center">
     <div class="row justify-content-start">
         <div class="col">
-            <h1>ISI KONTEN</h1>
+        <h1><i class="fa-solid fa-user-tie"></i> DATA PETUGAS</h1>
+        <input type="search" name="" placeholder="Cari..." class="form-control light-table-filter mt-3" data-table="table-hover">
+            <table class="table table-hover table-striped table-bordered border-dark mt-4">
+                <thead>
+                    <tr>
+                    <th scope="col">NIP</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Jenis Kelamin</th>
+                    <th scope="col">Alamat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">55</th>
+                            <td>Jhon</td>
+                            <td>L</td>
+                            <td>Malang</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">65</th>
+                            <td>Ari Gunawan</td>
+                            <td>L</td>
+                            <td>haha</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>  

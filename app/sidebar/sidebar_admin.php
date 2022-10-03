@@ -36,6 +36,7 @@
                   <li><a class="link_name" href="#">Transaksi</a></li>
                   <li><a href="home.php?page=data-pengembalian">Data Pengembalian</a></li>
                   <li><a href="home.php?page=data-peminjaman">Data Peminjaman</a></li>
+                  <li><a href="home.php?page=history">History</a></li>
               </ul>
           </li>
 

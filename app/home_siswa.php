@@ -41,12 +41,9 @@ if(!$_SESSION['nis']){
                 if ($_GET['page']=='buku-siswa'){
                     include('ksiswa/buku_siswa.php'); 
                 }
-                else if ($_GET['page']=='pengembalian-siswa'){
-                    include('ksiswa/pengembalian_siswa.php');
-                }
-                else if ($_GET['page']=='peminjaman-siswa'){
-                include('ksiswa/peminjaman_siswa.php');
-                }  
+                else if ($_GET['page']=='history-siswa'){
+                    include('ksiswa/history_siswa.php');
+                } 
                 else if ($_GET['page']=='utama'){
                 include('ksiswa/utama.php');
                 }  

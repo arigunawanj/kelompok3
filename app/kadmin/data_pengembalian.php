@@ -21,13 +21,9 @@
     <div class="row justify-content-start">
         <div class="col">
         <div class="card-body">
-                    <div class="col-sm-4 p-2 align-items-center">
-                        <form action="" method="get">
-                            <input type="text" class="form-control" placeholder="search" name="cari">
-                        </form>
-                    </div>
-
-                    <table class="table">
+        <h1>Data Pengembalian</h1>         
+                    <input type="search" name="" placeholder="Cari..." class="form-control light-table-filter mt-3" data-table="table-hover">
+                    <table class="table align-middle table-hover table-striped table-bordered border-light mt-4">
                         <thead>
                             <tr>
                                 <th scope="col">No</th>

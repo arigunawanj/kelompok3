@@ -29,6 +29,14 @@ if ($op == 'delete') {
     delete_tmp($_GET);
 }
 
+
+if ($sukses) {
+    header("refresh:1;url=home.php?page=data-peminjaman");
+}
+
+
+$officer = $_SESSION['nip'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -36,6 +44,7 @@ if ($op == 'delete') {
     <meta charset="UTF-8">
     <title>Perpustakaan</title>
     <link rel="stylesheet" href="asset/style.css">
+    <link rel="stylesheet" href="asset/style2.css">
     <link rel="stylesheet" href="asset/404.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -77,6 +86,9 @@ if ($op == 'delete') {
                 else if ($_GET['page']=='dashboard'){
                 include('kadmin/dashboard.php');
                 }    
+                else if ($_GET['page']=='history'){
+                include('kadmin/history.php');
+                }    
                 else {
                     include('404.php');
                 }
@@ -95,6 +107,7 @@ if ($op == 'delete') {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
             <!-- Script SweetAlert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <script src="search.js"></script>
   <script>
             function hapus_data (data_id) {
             // alert('OK')
@@ -114,6 +127,9 @@ if ($op == 'delete') {
         })
         }
     </script>
+
+    <!-- REFRESH -->
+    
     
 </body>
 </html>

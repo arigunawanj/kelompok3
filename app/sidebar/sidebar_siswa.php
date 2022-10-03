@@ -32,8 +32,7 @@
 
               <ul class="sub-menu">
                   <li><a class="link_name" href="#">Transaksi</a></li>
-                  <li><a href="home_siswa.php?page=pengembalian-siswa">Pengembalian</a></li>
-                  <li><a href="home_siswa.php?page=peminjaman-siswa">Peminjaman</a></li>
+                  <li><a href="home_siswa.php?page=history-siswa">History</a></li>
               </ul>
           </li>
 
