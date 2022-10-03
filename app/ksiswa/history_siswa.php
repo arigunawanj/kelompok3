@@ -53,9 +53,9 @@
                                     <td scope="row"><?php echo $r2['date_loan'] ?></td>
                                     <td scope="row"><?php
                                                     if ($r2['fine'] == 0) {
-                                                       echo '<button class="btn btn-primary" disabled><i class="fa-solid fa-circle-check"></i></button>';
+                                                       echo '<button class="btn btn-primary" disabled><i class="fa-solid fa-circle-check"></i> Tepat</button>';
                                                     }else {
-                                                        echo '<button class="btn btn-danger" disabled><i class="fa-solid fa-circle-xmark"></i></button>';
+                                                        echo '<button class="btn btn-danger" disabled><i class="fa-solid fa-circle-xmark"></i> Telat</button>';
                                                     }
 
                                                     ?></td>
