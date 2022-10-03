@@ -11,7 +11,7 @@ if(isset($_SESSION['nip'])){
 	  
 	  
 	  // var_dump($password);
-	  $query = mysqli_query($koneksi, "SELECT * FROM officer WHERE nip='$nip' AND password='$password'");
+	  $query = mysqli_query($db, "SELECT * FROM officer WHERE nip='$nip' AND password='$password'");
 	  $data = mysqli_fetch_assoc($query);
   
 	  if($data){

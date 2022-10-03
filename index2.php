@@ -10,7 +10,7 @@ if(isset($_SESSION['nis'])){
 	  
 	  
 	  // var_dump($password);
-	  $query = mysqli_query($koneksi, "SELECT * FROM student WHERE nis='$nis'");
+	  $query = mysqli_query($db, "SELECT * FROM student WHERE nis='$nis'");
 	  $data = mysqli_fetch_assoc($query);
   
 	  if($data){
