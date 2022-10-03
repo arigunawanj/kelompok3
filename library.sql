@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 03, 2022 at 04:07 PM
+-- Generation Time: Oct 03, 2022 at 05:25 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -84,6 +84,7 @@ CREATE TABLE `loan` (
 --
 
 INSERT INTO `loan` (`id_loan`, `id_student`, `id_officer`, `date_loan`, `date_retrun`) VALUES
+(101, 12, 55, '2022-09-25', '2022-10-01'),
 (498, 11, 55, '2022-10-03', '2022-10-04'),
 (755, 12, 55, '2022-10-03', '2022-10-04'),
 (792, 11, 55, '2022-10-03', '2022-10-04'),
@@ -161,7 +162,8 @@ INSERT INTO `retrun` (`id_retrun`, `id_loan`, `date_loan`, `fine`) VALUES
 (37, 992, '2022-10-03', 1000),
 (38, 992, '2022-10-03', 1000),
 (39, 992, '2022-10-03', 1000),
-(40, 903, '2022-10-03', 0);
+(40, 903, '2022-10-03', 0),
+(41, 101, '2022-10-03', 2000);
 
 -- --------------------------------------------------------
 
@@ -301,7 +303,7 @@ ALTER TABLE `loan`
 -- AUTO_INCREMENT for table `loan_detail`
 --
 ALTER TABLE `loan_detail`
-  MODIFY `id_detail_loan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id_detail_loan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `officer`
@@ -313,7 +315,7 @@ ALTER TABLE `officer`
 -- AUTO_INCREMENT for table `retrun`
 --
 ALTER TABLE `retrun`
-  MODIFY `id_retrun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id_retrun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `retrun_detail`
@@ -325,7 +327,7 @@ ALTER TABLE `retrun_detail`
 -- AUTO_INCREMENT for table `temporari`
 --
 ALTER TABLE `temporari`
-  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_tmp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
