@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost", "root", "", "library");
+$db = mysqli_connect("localhost", "root", "123", "library");
 
 $bookcode = "";
 $title = "";
@@ -262,4 +262,16 @@ function insert_retrun($data)
 
     $sukses2 = "Save data Sucessfuly";
     return $sql;
+}
+
+
+function history(){
+global $db;
+
+$query = "SELECT student.nis, student.nama, retrun.date_loan ,retrun.fine 
+FROM  book, student, loan, retrun 
+WHERE loan.id_student = student.nis AND retrun.id_loan = loan.id_loan";
+
+$sql = mysqli_query($db, $query);
+return $sql;
 }
