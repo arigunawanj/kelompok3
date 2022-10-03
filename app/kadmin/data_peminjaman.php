@@ -96,10 +96,7 @@
                     <div class="col">
                         <button type="submit" name="simpan" value="Simpan Data" class="btn btn-warning btn-rounded">Simpan</button>
                     </div>
-
                 </div>
-
-                <!-- <a href="admin.php?op=simpan"><button class="btn btn-primary" type="button">Save</button></a> -->
             </form>
 
             <div class="card-body text-white mt-2">
@@ -154,8 +151,8 @@
                 <div class="card-body">
                     <input type="search" name="" placeholder="Cari..." class="form-control light-table-filter mt-3" data-table="table-hover">
 
-                    <table class="table align-middle table-striped table-hover">
-                        <thead>
+                    <table class="table align-middle table-striped table-primary table-hover mt-4">
+                        <thead class="table-info">
                             <tr>
                                 <th scope="col">No</th>
                                 <th scope="col">Cover</th>

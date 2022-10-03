@@ -29,10 +29,19 @@ if ($op == 'delete') {
     delete_tmp($_GET);
 }
 
+if ($op == "retrun") {
+    insert_retrun($_GET);
+}
 
 if ($sukses) {
     header("refresh:1;url=home.php?page=data-peminjaman");
 }
+
+if ($sukses2) {
+            
+    header("refresh:2;url=home.php?page=data-pengembalian");
+  }
+
 
 
 $officer = $_SESSION['nip'];

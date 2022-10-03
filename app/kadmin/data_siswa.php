@@ -22,7 +22,7 @@
         <div class="col">
             <h1><i class="fa-solid fa-users"></i> DATA SISWA</h1>
             <input type="search" name="" placeholder="Cari..." class="form-control light-table-filter mt-3" data-table="table-hover">
-            <table class="table table-hover table-striped table-bordered border-dark mt-4">
+            <table class="table table-hover table-primary table-striped mt-4">
                 <thead>
                     <tr>
                     <th scope="col">NIS</th>
@@ -32,7 +32,7 @@
                     <th scope="col">ID Kelas</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">11</th>
                             <td>Patrick</td>

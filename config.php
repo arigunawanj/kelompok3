@@ -14,6 +14,7 @@ $nis = "";
 
 $id_book = "";
 $sukses = "";
+$sukses2 = "";
 //read Book
 $perMinggu = 60 * 60 * 24 * 7;
 $date = getdate();
@@ -23,7 +24,15 @@ $retrun_date = date('m/d/Y ', time() + $perMinggu * 1);
 //rondom id peminjaman
 $randomNumber = rand(1, 1000);
 
-
+if ($sukses) {
+            
+  header("refresh:2;url=home.php?page=data-peminjaman");
+}
+if ($sukses2) {
+            
+    header("refresh:2;url=home.php?page=data-pengembalian");
+  }
+  
 function read($table)
 {
     global $db;
@@ -162,12 +171,12 @@ function insert_loan($data)
     $id_book = $data['book'];
     $tgl_P = $data['loan_date'];
     $tgl_K = $data['retrun_date'];
-    $officer = $data['officer'];
-    
+
+
     //insert tabel peminjaman
     if ($nis != null && $id_book != null) {
 
-        $query  = "INSERT INTO loan (id_loan, id_student, id_officer, date_loan, date_retrun) VALUES ('$randomNumber','$nis','$officer','$tgl_P','$tgl_K')";
+        $query  = "INSERT INTO loan (id_loan, id_student, id_officer, date_loan, date_retrun) VALUES ('$randomNumber','$nis','55','$tgl_P','$tgl_K')";
         $sql    = mysqli_query($db, $query);
         $jml = count($id_book);
         for ($i = 0; $i < $jml; $i++) {
@@ -182,22 +191,75 @@ function insert_loan($data)
         $sukses = "Save data Sucessfuly";
         header('Location: home.php?page=data-pengembalian');
         return $sql;
-
-        
     } else {
-        echo '<script type="text/javascript">alert("masukan data nis")</script>';
+        echo '<script type="text/javascript">alert("insert all data")</script>';
         header("refresh:1;url=home.php?page=data-peminjaman");
     }
 }
 
-function read_detailloan(){
+function read_detailloan()
+{
     global $db;
 
-    $query = "SELECT book.cover, book.title, student.nis ,student.nama, loan.date_loan, loan.date_retrun
-    FROM loan_detail, book, student, loan
-    WHERE loan_detail.id_book = book.id_book AND loan_detail.id_loan = loan.id_loan AND loan.id_student = student.nis
-    ";
+    $query = "SELECT loan_detail.id_detail_loan, loan.id_loan, book.cover, book.title, student.nis ,student.nama, loan.date_loan, loan.date_retrun 
+    FROM loan_detail, book, student, loan WHERE loan_detail.id_book = book.id_book 
+    AND loan_detail.id_loan = loan.id_loan AND loan.id_student = student.nis";
+    $sql = mysqli_query($db, $query);
+    return $sql;
+}
 
-    $sql = mysqli_query($db,$query);
-    return $sql;        
+function insert_retrun($data)
+{
+    global $db;
+    global $stock;
+    global $sukses2;
+
+    $id = $data['id'];
+    $id_dtl = $data['id2'];
+    $loan_date = date("Y-m-d");
+    $denda = "";
+
+    $query = "SELECT loan.id_loan, loan.date_retrun
+    FROM loan WHERE loan.id_loan = $id";
+    $sq = mysqli_query($db, $query);
+    $sql = mysqli_fetch_array($sq);
+
+    if ($loan_date > $sql['date_retrun']) {
+
+        $t = date_create($sql['date_retrun']);
+        $n = date_create(date('Y-m-d'));
+        $terlambat = date_diff($t, $n);
+        $hari = $terlambat->format("%a");
+        $denda = $hari * 1000;
+    } else {
+        $denda = 0;
+    }
+
+
+    // insert data retrun
+    $query = "INSERT INTO retrun (id_loan, date_loan, fine) VALUES ('$id','$loan_date','$denda')";
+    $sql = mysqli_query($db, $query);
+    // delete id_peminjaman
+    
+    // add stock book
+    $query3     = "SELECT loan_detail.id_book, loan_detail.id_loan FROM loan_detail WHERE id_loan = $id";
+    $q2        = mysqli_query($db, $query3);
+    $sql        = mysqli_fetch_array($q2);
+    $id_book   = $sql['id_book'];
+    
+    
+    $query4     = "SELECT * FROM `book` WHERE book.id_book = $id_book";
+    $q3         = mysqli_query($db, $query4);
+    $sql        = mysqli_fetch_array($q3);
+    $stock      = $sql['stock'];
+
+    $hasil = $stock + 1;
+    $query1 = "UPDATE book SET stock = $hasil WHERE id_book = $id_book";
+    $sql = mysqli_query($db, $query1);
+    
+    $query2  = " DELETE from loan_detail where id_detail_loan = '$id_dtl'";
+    $sql         = mysqli_query($db, $query2);
+
+    $sukses2 = "Save data Sucessfuly";
+    return $sql;
 }

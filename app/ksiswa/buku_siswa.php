@@ -36,7 +36,7 @@
                         <th scope="col">Stock</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="table-group-divider">
                     <tr>
                         <th scope="row">1</th>
                             <td>Jhon</td>
