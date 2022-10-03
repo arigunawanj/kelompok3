@@ -94,10 +94,7 @@ $officer = $_SESSION['nip'];
                 }    
                 else if ($_GET['page']=='dashboard'){
                 include('kadmin/dashboard.php');
-                }    
-                else if ($_GET['page']=='history'){
-                include('kadmin/history.php');
-                }    
+                }        
                 else {
                     include('404.php');
                 }

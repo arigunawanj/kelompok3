@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect("localhost", "root", "123", "library");
+$db = mysqli_connect("localhost", "root", "", "library");
 
 $bookcode = "";
 $title = "";
@@ -269,7 +269,7 @@ function history(){
 global $db;
 
 $query = "SELECT student.nis, student.nama, retrun.date_loan ,retrun.fine 
-FROM  book, student, loan, retrun 
+FROM  student, loan, retrun 
 WHERE loan.id_student = student.nis AND retrun.id_loan = loan.id_loan";
 
 $sql = mysqli_query($db, $query);

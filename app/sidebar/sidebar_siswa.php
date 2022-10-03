@@ -42,7 +42,7 @@
           <li>
             <div class="profile-details">
               <div class="profile-content">
-                <!-- <img src="../asset/images/profile.png" alt="profileImg"> -->
+                <img src="../asset/images/profile.png" alt="profileImg">
               </div>
               <div class="name-job">
                 <div class="profile_name"><?= $_SESSION['nama']?></div>

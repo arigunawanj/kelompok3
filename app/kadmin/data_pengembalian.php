@@ -65,9 +65,9 @@
                             <td scope="row"><?php
                                             $loan_date = date("Y-m-d");
                                             if ($loan_date > $r2['date_retrun']) {
-                                                echo '<button class="btn btn-danger" disabled>Terlambat</button>';
+                                                echo '<button class="btn btn-danger" disabled><i class="fa-solid fa-circle-xmark"></i></button>';
                                             } else {
-                                                echo '<button class="btn btn-primary" disabled>Tepat Waktu</button>';
+                                                echo '<button class="btn btn-primary" disabled><i class="fa-solid fa-circle-check"></i></button>';
                                             }
 
 

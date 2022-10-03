@@ -36,7 +36,6 @@
                   <li><a class="link_name" href="#">Transaksi</a></li>
                   <li><a href="home.php?page=data-pengembalian">Data Pengembalian</a></li>
                   <li><a href="home.php?page=data-peminjaman">Data Peminjaman</a></li>
-                  <li><a href="home.php?page=history">History</a></li>
               </ul>
           </li>
 
@@ -46,7 +45,7 @@
           <li>
             <div class="profile-details">
               <div class="profile-content">
-                <!-- <img src="../asset/images/profile.png" alt="profileImg"> -->
+                <img src="../asset/images/profile.png" alt="profileImg">
               </div>
               <div class="name-job">
                 <div class="profile_name"><?= $_SESSION['name']?></div>
